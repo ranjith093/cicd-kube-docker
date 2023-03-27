@@ -7,7 +7,7 @@ pipeline {
     }
 */
     environment {
-        regisrty = "ranjith093/vproappdock"
+        registry = "ranjith093/vproappdock"
         registryCredential = 'dockerhub'
     }
 
@@ -75,7 +75,7 @@ pipeline {
         stage('Build App Image') {
             steps {
                 script {
-                    dockerImage = docker.build regisrty + ":V$BUILD_NUMBER" 
+                    dockerImage = docker.build registry + ":V$BUILD_NUMBER" 
                 }
             }
         }        
